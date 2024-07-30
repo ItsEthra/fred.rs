@@ -184,6 +184,9 @@ impl<C: TimeSeriesInterface> TimeSeriesInterface for Pipeline<C> {}
 #[cfg(feature = "i-redisearch")]
 #[cfg_attr(docsrs, doc(cfg(feature = "i-redisearch")))]
 impl<C: RediSearchInterface> RediSearchInterface for Pipeline<C> {}
+#[cfg(feature = "transactions")]
+#[cfg_attr(docsrs, doc(cfg(feature = "transactions")))]
+impl<C: TransactionInterface> TransactionInterface for Pipeline<C> {}
 
 impl<C: ClientLike> Pipeline<C> {
   /// Send the pipeline and respond with an array of all responses.
